@@ -42,7 +42,7 @@ resource "aws_security_group" "this" {
 # ElastiCache Replication Group (Redis)
 resource "aws_elasticache_replication_group" "this" {
   replication_group_id       = var.cluster_name
-  replication_group_description = "Redis cluster for ${var.cluster_name}"
+  description = "Redis cluster for ${var.cluster_name}"
   
   # Engine Configuration
   engine               = "redis"
@@ -75,3 +75,4 @@ resource "aws_elasticache_replication_group" "this" {
     Environment = var.environment
   }
 }
+
